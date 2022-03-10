@@ -1,0 +1,10 @@
+@import "../../styles/_variables.scss";
+
+.layout {
+  background-color: $brown-200;
+  min-height: 100vh;
+
+  &__page {
+    padding: 1.5rem 0;
+  }
+}

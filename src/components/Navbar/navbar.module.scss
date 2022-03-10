@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+
+.nav {
+  background-color: #fff;
+  margin-bottom: 0.5rem;
+  padding: 1rem 0;
+  h4 {
+  }
+
+  &__items {
+    display: flex;
+
+    li {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-inline-end: 1.2rem;
+      }
+
+      a {
+        text-transform: capitalize;
+        color: black;
+        font-weight: 500;
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+  .active {
+    border-bottom: 1px solid black;
+  }
+  &__logo {
+    h4 {
+      margin-bottom: 0;
+      font-size: $font-md;
+      font-weight: bold;
+    }
+  }
+}
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
