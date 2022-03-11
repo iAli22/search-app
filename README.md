@@ -60,6 +60,6 @@ App
   - [x] Card
   - [x] History Section
 - [x] add redux
-- [] All jobs
-  - [] Load all jobs data
-  - [] Load more data on scroll
+- [x] All jobs
+  - [x] Load all jobs data
+  - [x] Load more data on scroll
