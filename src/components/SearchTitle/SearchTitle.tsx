@@ -1,5 +1,5 @@
 import React from "react";
-
+import style from "./searchTitle.module.scss";
 interface SearchTitleProps {
   title: string;
   count: number;
@@ -7,8 +7,10 @@ interface SearchTitleProps {
 
 const SearchTitle: React.FC<SearchTitleProps> = ({ title = "All", count }) => {
   return (
-    <div>
-      {title} Jobs ({count})
+    <div className={style.searchTitle}>
+      <h3>
+        {title} Jobs ({count})
+      </h3>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { ROUTE } from "../constants/Routes";
-import { Home, Search } from "../views";
+import { Home, Search, Skill, Job } from "../views";
 const routes = [
   {
     path: ROUTE.BASE,
@@ -13,6 +13,14 @@ const routes = [
   {
     path: ROUTE.SEARCH,
     element: <Search />,
+  },
+  {
+    path: ROUTE.JOB,
+    element: <Job />,
+  },
+  {
+    path: ROUTE.SKILL,
+    element: <Skill />,
   },
 ];
 

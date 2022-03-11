@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { ROUTE } from "../../constants/Routes";
 import Container from "../Container/Container";
 import style from "./navbar.module.scss";
@@ -10,7 +10,9 @@ const Navbar: React.FC = () => {
       <Container>
         <div className={style.navbarContainer}>
           <div className={style.nav__logo}>
-            <h4>JobsNow</h4>
+            <Link to={ROUTE.HOME}>
+              <h2>JobsNow</h2>
+            </Link>
           </div>
           <ul className={style.nav__items}>
             <li>

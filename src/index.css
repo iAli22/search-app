@@ -15,7 +15,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   margin-top: 0;
   margin-bottom: 1rem;
   color: black;
@@ -28,13 +29,14 @@ ul {
 
 li {
   list-style: none;
-  display: inline-block;
 }
 a {
   display: inline-block;
   text-decoration: none;
 }
-
+button {
+  cursor: pointer;
+}
 a .active {
   border-bottom: 1px solid black;
 }

@@ -1,0 +1,42 @@
+@import "../../styles/variables";
+
+.searchInput {
+  position: relative;
+
+  &__input {
+    min-width: 60vw;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+    height: 2rem;
+    font-size: $font-sm;
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+  &__btn {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    right: 0;
+    top: 50%;
+    transform: translate(-10%, -50%);
+  }
+  &__autoComplete {
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 5vh;
+    transition: all $trans-time ease-in-out;
+    // border-radius: 5px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 1px 2px 3px rgba(#000000, 0.4);
+    display: none;
+    &_body {
+      padding: 0.5rem 0.8rem;
+    }
+  }
+}

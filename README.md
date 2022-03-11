@@ -21,7 +21,7 @@ App
 
 # Job Search App Requirements:
 
-- [] Implement a header with navigation and different page layouts.
+- [x] Implement a header with navigation and different page layouts.
 
 - Search box
 
@@ -55,7 +55,11 @@ App
 - [x] implement project structure
 - [x] create main components
 - [x] add routing.
-- [] style main components
-  - Search input
-  - Card
-  - History Section
+- [x] main components styles
+  - [x] Search input
+  - [x] Card
+  - [x] History Section
+- [x] add redux
+- [] All jobs
+  - [] Load all jobs data
+  - [] Load more data on scroll

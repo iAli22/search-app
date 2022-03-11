@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
 export type RouteType = {
-  path: PathRouteProps | LayoutRouteProps | IndexRouteProps;
+  path: string;
   element: ReactNode;
 };

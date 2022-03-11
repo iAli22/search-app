@@ -1,3 +1,32 @@
+@import "../../styles/variables";
+
 .searchHistory {
-  background-color: #fff;
+  background-color: $brown-300;
+
+  padding: 1rem;
+  height: 100%;
+  h5 {
+    font-size: $font-md;
+  }
+
+  ul {
+    font-size: $font-sm;
+    padding-inline-start: 2rem;
+    li {
+      list-style: disc;
+
+      &:not(:last-child) {
+        margin-bottom: 0.8rem;
+      }
+      a {
+        text-decoration: underline;
+        color: #000;
+      }
+    }
+  }
+
+  flex: 0 0 30%;
+  @media (max-width: 600px) {
+    flex: 0 0 100%;
+  }
 }

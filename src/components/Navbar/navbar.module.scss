@@ -4,8 +4,6 @@
   background-color: #fff;
   margin-bottom: 0.5rem;
   padding: 1rem 0;
-  h4 {
-  }
 
   &__items {
     display: flex;
@@ -29,7 +27,7 @@
     border-bottom: 1px solid black;
   }
   &__logo {
-    h4 {
+    h2 {
       margin-bottom: 0;
       font-size: $font-md;
       font-weight: bold;
