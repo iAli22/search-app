@@ -11,9 +11,11 @@ import {
 
 export const getAllJobs = () => async (dispatch: Dispatch) => {
   try {
+    dispatch({ type: LOADING, payload: true });
+
     const response = await axiosInstance.get(`/?cursor=0&limit=12`);
     dispatch({ type: GET_All_JOBS, payload: response.data.data.jobs });
-    console.log("response.data.data", response.data.data);
+    dispatch({ type: LOADING, payload: false });
   } catch (error) {
     console.log("err", error);
   }
@@ -35,11 +37,21 @@ export const loadMoreJobs = (cursor: number) => async (dispatch: Dispatch) => {
     console.log("err", error);
   }
 };
-export const searchJob = (query: string) => async (dispatch: Dispatch) => {
+export const searchJob = (query: any) => async (dispatch: Dispatch) => {
   try {
-    const response = await axiosInstance.get(`/jobs/search?query=${query}`);
+    dispatch({ type: LOADING, payload: true });
+
+    const response = await axiosInstance.get(
+      `${
+        query
+          ? `/jobs/search?query=${query.toLowerCase()}`
+          : `/?cursor=0&limit=12`
+      }`
+    );
 
     dispatch({ type: SEARCH_JOB, payload: response.data.data.jobs });
+
+    dispatch({ type: LOADING, payload: false });
   } catch (error) {
     console.log("err", error);
   }

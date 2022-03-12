@@ -25,9 +25,9 @@ App
 
 - Search box
 
-  - [] Add autocomplete.
-  - [] Add debounce.
-  - [] Make the API calls only if the user has typed 3 or more characters.
+  - [x] Add autocomplete.
+  - [x] Add debounce.
+  - [x] Make the API calls only if the user has typed 3 or more characters.
   - [] If the user clears the results and shows the all jobs screen.
 
 - All jobs screen

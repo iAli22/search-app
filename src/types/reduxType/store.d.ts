@@ -32,6 +32,7 @@ export interface Attributes {
 export type Store = {
   jobs: {
     data: Job[];
+    search: Job[];
     hasMore: boolean;
     cursor: number;
     loading: boolean;

@@ -1,27 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Job } from "../../types/reduxType/store";
 import style from "./searchHistory.module.scss";
 
-interface SearchHistoryProps {}
+const SearchHistory: React.FC = () => {
+  const [history, setHistroy] = useState([]);
+  const location = useLocation();
 
-const SearchHistory: React.FC<SearchHistoryProps> = () => {
+  const localStorageData =
+    JSON.parse(
+      // @ts-ignore
+      localStorage.getItem("search_history")
+    ) || [];
+
+  useEffect(() => {
+    setHistroy(localStorageData);
+  }, [location]);
+
   return (
     <aside className={style.searchHistory}>
       <h5>Search History:</h5>
 
       <ul>
-        <li>
-          <Link to="/">test</Link>
-        </li>
-        <li>
-          <Link to="/">test</Link>
-        </li>
-        <li>
-          <Link to="/">test</Link>
-        </li>
-        <li>
-          <Link to="/">test</Link>
-        </li>
+        {history.length > 0 &&
+          history.map((data: Job) => (
+            <li key={data.id}>
+              <Link to={`/jobs/search`} state={data.attributes.title}>
+                {data.attributes.title}
+              </Link>
+            </li>
+          ))}
       </ul>
     </aside>
   );

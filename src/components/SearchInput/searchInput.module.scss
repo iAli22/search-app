@@ -30,13 +30,27 @@
     right: 0;
     width: 100%;
     min-height: 5vh;
-    transition: all $trans-time ease-in-out;
-    // border-radius: 5px;
+
     border-radius: 0 0 5px 5px;
     box-shadow: 1px 2px 3px rgba(#000000, 0.4);
-    display: none;
+    display: block;
+    transition: all 25s ease-in-out;
+
     &_body {
       padding: 0.5rem 0.8rem;
+
+      ul {
+        li {
+          &:not(:last-child) {
+            margin-bottom: 0.5rem;
+          }
+
+          a {
+            font-size: $font-sm;
+            color: #000;
+          }
+        }
+      }
     }
   }
 }
