@@ -44,7 +44,6 @@ const SearchInput: React.FC<SearchInputProps> = () => {
       localStorage.setItem("search_history", JSON.stringify([search]));
     }
   };
-
   const getAutoComplete = async (query: string) => {
     try {
       const res = await axiosInstance.get(
@@ -55,7 +54,6 @@ const SearchInput: React.FC<SearchInputProps> = () => {
       console.log(error);
     }
   };
-
   // Show AutoComplete Dropdown
   useEffect(() => {
     // @ts-ignore
@@ -66,12 +64,31 @@ const SearchInput: React.FC<SearchInputProps> = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const debounceFn = setTimeout(() => {
+      if (query.length >= 3 && query !== location.state) {
+        setShowDropDown(true);
+
+        getAutoComplete(query);
+      }
+
+      if (query.length === 0 && location.state) {
+        console.log("there is no term");
+        // location.state = null;
+        //   remove term after searching
+      }
+    }, 1000);
+
+    return () => clearTimeout(debounceFn);
+  }, [query, location]);
+
   const handleClickOutsideDropDown = (event: React.MouseEvent) => {
     // @ts-ignore
     if (refDropDown && !refDropDown.current?.contains(event.target)) {
       setShowDropDown(false);
     }
   };
+
   return (
     <div className={style.searchInput}>
       <input
@@ -82,14 +99,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
         onChange={(e) => {
           setQuery(e.target.value);
         }}
-        onKeyUp={() => {
-          if (query.length >= 3 || location.state) {
-            setShowDropDown(true);
-            setTimeout(() => {
-              getAutoComplete(query);
-            }, 1000);
-          }
-        }}
+        data-testid="search-input"
       />
       <button className={style.searchInput__btn}>
         <SearchIcon height={30} width={30} fill="#888" />

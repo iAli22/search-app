@@ -14,7 +14,6 @@ const TimeLine: React.FC<TimeLineProps> = ({ data, children, loadMore }) => {
   const hasMore = useSelector((state: Store) => state.jobs.hasMore);
   const cursor = useSelector((state: Store) => state.jobs.cursor);
   const loading = useSelector((state: Store) => state.jobs.loading);
-
   // infinity scroll
   let observer = useRef<any>(null);
   const lastCardNode = useCallback(
@@ -45,20 +44,7 @@ const TimeLine: React.FC<TimeLineProps> = ({ data, children, loadMore }) => {
                   refs={lastCardNode}
                   key={job.id}
                   uuid={job.id}
-                  skills={[
-                    {
-                      title: "operation monitoring",
-                      id: 1,
-                    },
-                    {
-                      title: "operation monitoring",
-                      id: 3,
-                    },
-                    {
-                      title: "operation monitoring",
-                      id: 2,
-                    },
-                  ]}
+                  skills={job.relationships.skills}
                   title={job.attributes.title}
                 />
               );
@@ -67,20 +53,7 @@ const TimeLine: React.FC<TimeLineProps> = ({ data, children, loadMore }) => {
                 <Card
                   key={job.id}
                   uuid={job.id}
-                  skills={[
-                    {
-                      title: "operation monitoring",
-                      id: 1,
-                    },
-                    {
-                      title: "operation monitoring",
-                      id: 3,
-                    },
-                    {
-                      title: "operation monitoring",
-                      id: 2,
-                    },
-                  ]}
+                  skills={job.relationships.skills}
                   title={job.attributes.title}
                 />
               );

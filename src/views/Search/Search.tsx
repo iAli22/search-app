@@ -21,7 +21,8 @@ const Search: React.FC = () => {
     } else if (location.state) {
       dispatch(searchJob(location.state));
     }
-  }, [location]);
+  }, [location, dispatch]);
+
   return (
     <MainLayout>
       {(jobs.length > 0 || !loading) && (
@@ -35,6 +36,8 @@ const Search: React.FC = () => {
       )}
 
       {jobs.length === 0 && !loading && <h4>No Results</h4>}
+
+      {jobs.length === 0 && <Spinner />}
     </MainLayout>
   );
 };

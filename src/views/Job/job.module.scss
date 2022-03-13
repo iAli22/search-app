@@ -1,6 +1,11 @@
+@import "../../styles/variables";
+
 .job {
   padding: 1.5rem 0;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+}
+h3 {
+  font-size: $font-lg;
 }

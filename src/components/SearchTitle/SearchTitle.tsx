@@ -9,7 +9,7 @@ const SearchTitle: React.FC<SearchTitleProps> = ({ title, count }) => {
   return (
     <div className={style.searchTitle}>
       <h3>
-        {title} Jobs ({count})
+        {title} Jobs (<span data-testid="data-count">{count}</span>)
       </h3>
     </div>
   );

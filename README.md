@@ -15,8 +15,8 @@ App
 
 - SecondaryLayout
   - NavBar
-  - InfoContainer.
-    - infoCard
+  - Details.
+    - RelatedCard
   - SearchHistory # as Children
 
 # Job Search App Requirements:
@@ -28,20 +28,20 @@ App
   - [x] Add autocomplete.
   - [x] Add debounce.
   - [x] Make the API calls only if the user has typed 3 or more characters.
-  - [] If the user clears the results and shows the all jobs screen.
+  - [x] If the user clears the results and shows the all jobs screen.
 
 - All jobs screen
 
-  - [] Display all jobs from the API, show only the first 12 jobs and update the total jobs count.
-  - [] When the user starts typing the search query after 3 letters you should navigate to the search page with the typed query.
-  - [] Display job data with link to skill screen screen.
-  - [] Infinite scrolling.
+  - [x] Display all jobs from the API, show only the first 12 jobs and update the total jobs count.
+  - [x] When the user starts typing the search query after 3 letters you should navigate to the search page with the typed query.
+  - [x] Display job data with link to skill screen screen.
+  - [x] Infinite scrolling.
 
 - Search jobs screen
 
-  - [] Display search results
-  - [] Handle no search results.
-  - [] persist search data
+  - [x] Display search results
+  - [x] Handle no search results.
+  - [x] persist search data
 
 - Job screen
 

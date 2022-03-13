@@ -8,13 +8,3 @@ export const axiosInstance = axios.create({
     "Accept-language": "en",
   },
 });
-
-axiosInstance.interceptors.response.use(
-  (response) => {
-    return response;
-  },
-  (error) => {
-    /*  throw error */
-    throw error;
-  }
-);

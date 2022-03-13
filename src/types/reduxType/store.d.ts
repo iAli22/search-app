@@ -7,11 +7,11 @@ export type Job = {
   relationships: {
     skills: {
       id: string;
-    };
+    }[];
   };
 };
 
-export type skill = {
+export type Skill = {
   id: string;
   type: string;
   attributes: Attributes;
@@ -37,5 +37,4 @@ export type Store = {
     cursor: number;
     loading: boolean;
   };
-  history: Job;
 };

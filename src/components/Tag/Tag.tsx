@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import style from "./tag.module.scss";
 
 interface TagProps {
-  text: string;
+  text?: string | undefined;
   color: string;
   bg: string;
-  uuid: number;
+  uuid: string;
 }
 
 const Tag: React.FC<TagProps> = ({ text, color, bg, uuid }) => {
@@ -19,7 +19,7 @@ const Tag: React.FC<TagProps> = ({ text, color, bg, uuid }) => {
         background: bg,
       }}
     >
-      <span>{text}</span>
+      <span>{text ?? "skill"}</span>
     </Link>
   );
 };
