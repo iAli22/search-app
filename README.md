@@ -48,7 +48,7 @@ App
   - [] Display the job information.
 
 - Skill screen
-  - [] Display the skill information..
+  - [x] Display the skill information..
 
 # TODO list
 

@@ -14,7 +14,7 @@ const Details: React.FC<DetailsProps> = ({ type, data }) => {
         <h4>Related {type}</h4>
 
         {data?.map((item) => (
-          <RelatedCard key={item.id} storageName={type} />
+          <RelatedCard key={item.id} uuid={item.id} storageName={type} />
         ))}
       </div>
     </div>

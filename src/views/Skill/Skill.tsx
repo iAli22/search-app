@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { SearchHistory } from "../../components";
 import Spinner from "../../components/Spinner/Spinner";

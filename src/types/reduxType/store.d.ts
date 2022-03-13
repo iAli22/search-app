@@ -3,6 +3,10 @@ export type Job = {
   type: string;
   attributes: {
     title: string;
+    name?: string;
+    type: string;
+    importance: string;
+    level: string;
   };
   relationships: {
     skills: {
@@ -26,6 +30,7 @@ export interface Attributes {
   type: string;
   importance: string;
   level: string;
+  title?: string;
 }
 
 // Store
