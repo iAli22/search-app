@@ -21,6 +21,7 @@ const Search: React.FC = () => {
     } else if (location.state) {
       dispatch(searchJob(location.state));
     }
+    // eslint-disable-next-line
   }, [location, dispatch]);
 
   return (

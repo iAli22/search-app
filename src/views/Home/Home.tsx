@@ -16,7 +16,7 @@ const Home: React.FC<HomeProps> = () => {
     if (jobs.length === 0) {
       dispatch(getAllJobs());
     }
-  }, [dispatch]);
+  });
 
   const getMoreJobs = (cursor: number) => {
     dispatch(loadMoreJobs(cursor));
