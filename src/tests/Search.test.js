@@ -1,10 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
+import "intersection-observer";
 import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
 import store from "../redux/store";
 import { Search } from "../views";
-
-test("Search page rendering", () => {
+test("Search page rendering", async () => {
   render(
     <Provider store={store}>
       <Search />
@@ -12,7 +12,9 @@ test("Search page rendering", () => {
     { wrapper: MemoryRouter }
   );
 
-  // SearchInput
-  const searchElement = screen.queryByTestId("search-input");
-  expect(searchElement).toBeInTheDocument();
+  await waitFor(() => {
+    // jobs init count 12
+    const jobCount = screen.getByTestId("data-count").textContent;
+    expect(jobCount).toEqual("12");
+  });
 });

@@ -11,7 +11,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
   const location = useLocation();
   const [query, setQuery] = useState<any>(location.state || "");
   const [showDropDown, setShowDropDown] = useState<boolean>(false);
-  const [autoComplete, setAutoComplete] = useState<Job[]>([]);
+  const [autoComplete, setAutoComplete] = useState<Job[] | null>(null);
 
   const refDropDown = useRef<React.LegacyRef<HTMLDivElement> | undefined>();
 
@@ -110,22 +110,25 @@ const SearchInput: React.FC<SearchInputProps> = () => {
           className={style.searchInput__autoComplete}
           // @ts-ignore
           ref={refDropDown}
+          data-testid="dropdown-list"
         >
           <div className={style.searchInput__autoComplete_body}>
             <ul>
-              {autoComplete.length > 0 &&
+              {autoComplete &&
+                autoComplete.length > 0 &&
                 autoComplete.map((res) => (
                   <li key={res.id}>
                     <Link
                       to={`/jobs/search`}
                       state={res.attributes.title}
                       onClick={() => setHistorySearch(res)}
+                      data-testid="dropdown-item"
                     >
                       {res.attributes.title}
                     </Link>
                   </li>
                 ))}
-              {autoComplete.length === 0 && <h4>No Results</h4>}
+              {autoComplete && autoComplete.length === 0 && <h4>No Results</h4>}
             </ul>
           </div>
         </div>
