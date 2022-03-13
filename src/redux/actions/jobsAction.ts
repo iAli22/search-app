@@ -1,6 +1,5 @@
 import { Dispatch } from "redux";
 import { axiosInstance } from "../../api/baseUrl";
-import { Store } from "../../types/reduxType/store";
 import {
   GET_All_JOBS,
   LOADING,

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Job } from "../../types/reduxType/store";
 import style from "./searchHistory.module.scss";
@@ -7,15 +7,19 @@ const SearchHistory: React.FC = () => {
   const [history, setHistroy] = useState([]);
   const location = useLocation();
 
-  const localStorageData =
-    JSON.parse(
-      // @ts-ignore
-      localStorage.getItem("search_history")
-    ) || [];
+  const memoStorage = useMemo(
+    () =>
+      JSON.parse(
+        // @ts-ignore
+        localStorage.getItem("search_history")
+      ) || [],
+    // eslint-disable-next-line
+    [location]
+  );
 
   useEffect(() => {
-    setHistroy(localStorageData);
-  }, [location]);
+    setHistroy(memoStorage);
+  }, [memoStorage, location]);
 
   return (
     <aside className={style.searchHistory}>

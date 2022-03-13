@@ -20,7 +20,7 @@ const RelatedCard: React.FC<RelatedCardProps> = ({ storageName, uuid }) => {
           {skillsStorage.map((storage: Job | Skill) => {
             if (storage.id === uuid) {
               return (
-                <div className={style.relatedCard}>
+                <div className={style.relatedCard} key={storage.id}>
                   <h4>
                     <Link
                       to={
@@ -56,6 +56,8 @@ const RelatedCard: React.FC<RelatedCardProps> = ({ storageName, uuid }) => {
                   </ul>
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </>
