@@ -45,7 +45,7 @@ App
 
 - Job screen
 
-  - [] Display the job information.
+  - [x] Display the job information.
 
 - Skill screen
   - [x] Display the skill information..
